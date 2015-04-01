@@ -1,0 +1,22 @@
+{
+  "name": "subscriptions",
+  "version": "1.0.0",
+  "description": "a subscription service API using ExpressJS, MongoDB and Mongoose",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andela-tsokari/subscriptions"
+  },
+  "keywords": [
+    "API"
+  ],
+  "author": "Tams Sokari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andela-tsokari/subscriptions/issues"
+  },
+  "homepage": "https://github.com/andela-tsokari/subscriptions"
+}
