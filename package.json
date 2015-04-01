@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/andela-tsokari/subscriptions/issues"
   },
-  "homepage": "https://github.com/andela-tsokari/subscriptions"
+  "homepage": "https://github.com/andela-tsokari/subscriptions",
+  "devDependencies": {
+    "body-parser": "^1.12.2",
+    "express": "^4.12.3",
+    "mongoose": "^4.0.1"
+  }
 }
