@@ -1,5 +1,5 @@
 {
-  "name": "subscriptions",
+  "name": "subscriptions-api",
   "version": "1.0.0",
   "description": "a subscription service API using ExpressJS, MongoDB and Mongoose",
   "engines": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/andela-tsokari/subscriptions"
+    "url": "https://github.com/andela-tsokari/subscriptions-api"
   },
   "keywords": [
     "API"
@@ -24,9 +24,9 @@
     },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/andela-tsokari/subscriptions/issues"
+    "url": "https://github.com/andela-tsokari/subscriptions-api/issues"
   },
-  "homepage": "https://github.com/andela-tsokari/subscriptions",
+  "homepage": "https://github.com/andela-tsokari/subscriptions-api",
   "devDependencies": {
     "jasmine-node": "^1.14.5",
     "supertest": "^0.15.0"
