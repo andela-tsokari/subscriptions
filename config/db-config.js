@@ -14,6 +14,8 @@ module.exports = (function () {
       production: {
         uri: 'process.env.MONGOLAB_URI'
       }
-    }
+    },
+
+    port: process.env.PORT || 4000
   };
 })();
