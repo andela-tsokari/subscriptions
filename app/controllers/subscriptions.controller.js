@@ -1,4 +1,4 @@
-var SubscriptionModel = require('..app/models/subscription.model');
+var SubscriptionModel = require('./../models/subscription.model');
 
 module.exports = {
   getAllSubscriptions: function(request, response){
@@ -22,7 +22,6 @@ module.exports = {
         response.json({message: 'New Subscription Added'});
       }
     });
-
 
   }
 };
