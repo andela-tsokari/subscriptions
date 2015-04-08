@@ -8,7 +8,6 @@
   "scripts": {
     "start": "nodemon server.js",
     "test": "export NODE_ENV=test && jasmine-node app/tests/**/*.js --autotest --color",
-    //try testing with specific files and with folder
     "test-remote": "export NODE_ENV=staging && jasmine-node app/tests/**/*.js --autotest --color"
   },
   "repository": {
