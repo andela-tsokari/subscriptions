@@ -2,9 +2,14 @@
   "name": "subscriptions",
   "version": "1.0.0",
   "description": "a subscription service API using ExpressJS, MongoDB and Mongoose",
-  "main": "index.js",
+  "engines": {
+    "node": "0.1x.x"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js",
+    "test": "export NODE_ENV=test && jasmine-node app/tests/**/*.js --autotest --color",
+    //try testing with specific files and with folder
+    "test-remote": "export NODE_ENV=staging && jasmine-node app/tests/**/*.js --autotest --color"
   },
   "repository": {
     "type": "git",
@@ -13,16 +18,18 @@
   "keywords": [
     "API"
   ],
-  "author": "Tams Sokari",
+  "author": {
+    "name": "Tams Sokari",
+    "email": "tams.sokari@andela.co"
+    },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/andela-tsokari/subscriptions/issues"
   },
   "homepage": "https://github.com/andela-tsokari/subscriptions",
   "devDependencies": {
-    "body-parser": "^1.12.2",
-    "express": "^4.12.3",
-    "mongoose": "^4.0.1"
+    "jasmine-node": "^1.14.5",
+    "supertest": "^0.15.0"
   },
   "dependencies": {
     "body-parser": "^1.12.2",
