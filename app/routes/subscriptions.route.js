@@ -1,4 +1,4 @@
-var subscriptions = require('./../controllers/subscription.controller');
+var subscriptions = require('./../controllers/subscriptions.controller');
 
 module.exports = function (router) {
 // body...
