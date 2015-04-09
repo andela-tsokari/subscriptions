@@ -20,7 +20,7 @@
   "author": {
     "name": "Tams Sokari",
     "email": "tams.sokari@andela.co"
-    },
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/andela-tsokari/subscriptions-api/issues"
@@ -28,6 +28,7 @@
   "homepage": "https://github.com/andela-tsokari/subscriptions-api",
   "devDependencies": {
     "jasmine-node": "^1.14.5",
+    "nodemon": "^1.3.7",
     "supertest": "^0.15.0"
   },
   "dependencies": {
