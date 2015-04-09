@@ -4,6 +4,13 @@ module.exports = function (router) {
 // body...
   router.route('/subscriptions')
     .get(subscriptions.getAllSubscriptions)
-    .post(subscriptions.createSubscription
-    );
+    .post(subscriptions.createSubscription);
+  router.route('/subscriptions/:_id')
+    .delete(subscriptions.deleteOneSubscription)
+    .put(subscriptions.updateOneSubscription)
+    .get(subscriptions.getOneSubscription);
+  router.route('/subscriptions/:posts')
+    .get(subscriptions.getPostSubscriptions);
+  router.route('/subscriptions/:tags')
+    .get(subscriptions.getTagSubscriptions);
 };
