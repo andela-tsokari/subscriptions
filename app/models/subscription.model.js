@@ -6,12 +6,12 @@ var Schema = mongoose.Schema;
 //create subscription Schema
 var subscriptionSchema = new Schema({
   post: {
-    title: {type: String, required: true,default: "Not a Post Subscription"},
+    title: {type: String, default: "Not a Post Subscription"},
     comments: {type: Boolean, required: true, default: false},
     edits: {type: Boolean, required: true, default: false}
   },
   tag: {
-    title: {type: String, required: true, default: "Not a Tag Subscription"},
+    title: {type: String, default: "Not a Tag Subscription"},
     posts: {type: Boolean, required: true, default: false},
     comments: {type: Boolean, required: true, default: false}
   }
