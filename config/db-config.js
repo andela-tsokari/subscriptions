@@ -9,10 +9,10 @@ module.exports = (function () {
         uri: 'mongodb://localhost/subscriptions-test'
       },
       staging: {
-        uri: 'process.env.MONGOLAB_URI'
+        uri: process.env.MONGOLAB_URI
       },
       production: {
-        uri: 'process.env.MONGOLAB_URI'
+        uri: process.env.MONGOLAB_URI
       }
     },
 
