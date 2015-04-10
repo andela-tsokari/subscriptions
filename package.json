@@ -7,8 +7,8 @@
   },
   "scripts": {
     "start-dev": "nodemon server.js",
-    "test": "export NODE_ENV=test && jasmine-node app/tests/**/*.js --autotest --color",
-    "test-remote": "export NODE_ENV=staging && jasmine-node app/tests/**/*.js --autotest --color"
+    "test": "export NODE_ENV=test && jasmine-node ./tests --autotest --watch --color",
+    "test-remote": "export NODE_ENV=staging && jasmine-node ./tests --autotest --watch --color"
   },
   "repository": {
     "type": "git",
