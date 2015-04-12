@@ -5,12 +5,12 @@ module.exports = function (router) {
   router.route('/subscriptions')
     .get(subscriptions.getAllSubscriptions)
     .post(subscriptions.createSubscription);
-  router.route('/subscriptions/:_id')
+  router.route('/subscriptions/posts')
+    .get(subscriptions.getPostSubscriptions);
+  router.route('/subscriptions/tags')
+    .get(subscriptions.getTagSubscriptions);
+  router.route('/subscription/:_id')
     .delete(subscriptions.deleteOneSubscription)
     .put(subscriptions.updateOneSubscription)
     .get(subscriptions.getOneSubscription);
-  router.route('/subscriptions/:posts')
-    .get(subscriptions.getPostSubscriptions);
-  router.route('/subscriptions/:tags')
-    .get(subscriptions.getTagSubscriptions);
 };
