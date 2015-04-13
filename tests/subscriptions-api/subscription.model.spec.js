@@ -1,10 +1,12 @@
-var app = require('./../../server.js');
-var SubscriptionModel = require('./../../app/models/subscription.model');
-var subscription;
-var id;
-var deleteID;
-var updateID;
-var edit;
+var app = require('./../../server.js'), 
+    SubscriptionModel = require('./../../app/models/subscription.model'),
+    subscription,
+    id,
+    deleteID,
+    updateID,
+    edit,
+    posts,
+    tags;
 
 describe('SubscriptionModel Unit Test:', function () {
   // body...
@@ -15,8 +17,8 @@ describe('SubscriptionModel Unit Test:', function () {
         title: "trial post"
       }
     });
-    id = '552869c248fe746b69d9237a';
-    updateID = '55286a42362a62716912e397';
+    id = '552af413ae4138f23a91444e';
+    updateID = '552af476f5e35df83ab5c837';
     edit = {
       post: {
         title: 'how about a change',
@@ -24,8 +26,16 @@ describe('SubscriptionModel Unit Test:', function () {
         edits: false
       }
     };
-    deleteID = '55286bc188d99d9469149bae';
+    deleteID = '552af498920db7fc3a028f29';
     done();
+    posts = {post: {$ne: {
+      edits: false,
+      comments: false,
+      title: 'Not a Post Subscription'
+    } } };
+    tags = {post: {$ne: {
+      title: 'Not a Tag Subscription'
+    } } };
   });
   describe('Save Subscription - ', function () {
     // body...
@@ -83,6 +93,29 @@ describe('SubscriptionModel Unit Test:', function () {
     });
   });
 
+
+  describe('Get All Post Subscriptions -', function () {
+    // body...
+    it('should find all post subscriptions (not default)', function(done){
+      SubscriptionModel.find(posts, function(error, posts) {
+        expect(error).toBeNull();
+        expect(posts).toBeTruthy();
+        done();
+      });
+    });
+  });
+
+  describe('Get All Tag Subscriptions -', function () {
+    // body...
+    it('should find all tag subscriptions (not default)', function(done){
+      SubscriptionModel.find(tags, function(error, tags) {
+        expect(error).toBeNull();
+        expect(tags).toBeTruthy();
+        done();
+      });
+    });
+  });
+
   describe('Delete One Subscription - ', function () {
     // body...
 
@@ -91,6 +124,7 @@ describe('SubscriptionModel Unit Test:', function () {
       SubscriptionModel.findByIdAndRemove(deleteID, function (error, subscription) {
         // body...
         expect(error).toBeNull();
+        console.log('Subscription with id: ' + deleteID + ' has been deleted');
         expect(subscriptions).not.toBeTruthy();
         done();
       });
