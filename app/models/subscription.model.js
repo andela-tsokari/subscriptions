@@ -5,6 +5,7 @@ var Schema = mongoose.Schema;
 
 //create subscription Schema
 var subscriptionSchema = new Schema({
+  author: {type: String, required: true},
   post: {
     title: {type: String, required: true, default: "Not a Post Subscription"},
     comments: {type: Boolean, required: true, default: false},
