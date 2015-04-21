@@ -1,8 +1,6 @@
 //the functionality which the routes have is stored in the controller. thus, the first step is to require the controller.
 var subscriptions = require('./../controllers/subscriptions.controller');
 
-var cors = require('cors');
-
 //we will export this router capability to the server.js location. so it can be used by the app
 module.exports = function (router) {
   //route for all subscriptions. from here, we can create new posts and retrieve all old posts.
@@ -28,13 +26,13 @@ module.exports = function (router) {
     .get(subscriptions.getUserTagSubscriptions);
 
   router.route('/:username/new-subs')
-    .post(cors(), subscriptions.createUserSubscription);
+    .post(subscriptions.createUserSubscription);
 
   router.route('/:username/subscription/:_id')
     .get(subscriptions.getUserSubscription);
 
   router.route('/:username/subscription/:_id')
-    .put(cors(), subscriptions.editUserSubscription)
-    .delete(cors(), subscriptions.deleteUserSubscription);
+    .put(subscriptions.editUserSubscription)
+    .delete(subscriptions.deleteUserSubscription);
 
 };
