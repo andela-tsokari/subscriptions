@@ -13,12 +13,13 @@ describe('SubscriptionModel Unit Test:', function () {
   beforeEach(function (done) {
     // body...
     subscription = new SubscriptionModel({
+      author: 'aTamsSokari',
       post: {
         title: "trial post"
       }
     });
-    id = '552af413ae4138f23a91444e';
-    updateID = '552af476f5e35df83ab5c837';
+    id = '5536248ccd3ec28814ed988b';
+    updateID = '553623057674b86a142965b4';
     edit = {
       post: {
         title: 'how about a change',
@@ -26,7 +27,7 @@ describe('SubscriptionModel Unit Test:', function () {
         edits: false
       }
     };
-    deleteID = '552af498920db7fc3a028f29';
+    deleteID = '553623ddea4e0f7d148ff36e';
     done();
     posts = {post: {$ne: {
       edits: false,
@@ -116,6 +117,17 @@ describe('SubscriptionModel Unit Test:', function () {
     });
   });
 
+  describe('Find Subscriptions Belonging to a User - ', function() {
+    it('it should get all subscriptions with a particular username', function(done) {
+      SubscriptionModel.find({author: 'aTamsSokari'}, {_id: 0, __v: 0, tag: 0}, function(error, subscriptions) {
+        expect(error).toBeNull();
+        expect(subscriptions).toBeDefined();
+        console.log(subscriptions);
+        done();
+      });
+    });
+  });
+
   describe('Delete One Subscription - ', function () {
     // body...
 
@@ -123,12 +135,13 @@ describe('SubscriptionModel Unit Test:', function () {
       // body...
       SubscriptionModel.findByIdAndRemove(deleteID, function (error, subscription) {
         // body...
-        expect(error).toBeNull();
+        expect(error).toBeDefined();
         console.log('Subscription with id: ' + deleteID + ' has been deleted');
         expect(subscriptions).not.toBeTruthy();
         done();
       });
     });
   });
+
 
 });
