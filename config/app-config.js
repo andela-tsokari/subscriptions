@@ -8,7 +8,7 @@ module.exports = function() {
   app
     .use(bodyParser.json())
     .use(bodyParser.urlencoded({extended : true}))
-    .use('/', router);
+    .use('/api/v1', router);
 
   routes(router);
 
