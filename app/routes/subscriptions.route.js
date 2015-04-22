@@ -29,9 +29,7 @@ module.exports = function (router) {
     .post(subscriptions.createUserSubscription);
 
   router.route('/:username/subscription/:_id')
-    .get(subscriptions.getUserSubscription);
-
-  router.route('/:username/subscription/:_id')
+    .get(subscriptions.getUserSubscription)
     .put(subscriptions.editUserSubscription)
     .delete(subscriptions.deleteUserSubscription);
 
