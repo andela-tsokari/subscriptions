@@ -15,5 +15,5 @@ mongoose.connection.on('error', function (err) {
 var app = require('./config/app-config')(db);
 
 app.listen(config.port, function () {
-    console.log('Express app listening on port: ' + config.port);
+    console.log('Subscriptions-API listening on Port: ' + config.port);
 });
