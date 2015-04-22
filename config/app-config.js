@@ -12,7 +12,7 @@ module.exports = function() {
   var router = express.Router();
   app
     .use(bodyParser.json())
-    .use(cors(corsOption))
+    .use(cors())
     .use(bodyParser.urlencoded({extended : true}))
     .use('/api/v1', router);
 
